@@ -3,6 +3,7 @@ package com.example.ctheadimage;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TabHost;
@@ -16,15 +17,6 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		//初始化CT数据
-		CTData dataset;
-		dataset = CTData.getInstance();
-		try {
-			dataset.createCTData(this);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		setContentView(R.layout.activity_main);
 		
 		radiogroup = (RadioGroup)findViewById(R.id.radiogroup);
@@ -72,7 +64,10 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
                 // 刷新actionbar的menu
                 //getWindow().invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
             }
-        });       
+        });
+        Intent startIntent = new Intent(this, CTHeadService.class);
+        startService(startIntent);
+        
 	}
 	
 }

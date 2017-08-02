@@ -23,5 +23,15 @@
           	  android:layout_height="wrap_content"
           	  android:max="112"
          	  android:progress="1" />
+     	 <Button 
+     	     android:id="@+id/Top_highLight"
+     	     android:layout_width="wrap_content"
+     	     android:layout_height="wrap_content"
+     	     android:text="HighLight"/>
+     	 <Button 
+     	     android:id="@+id/Top_HistogramEQ"
+     	     android:layout_width="wrap_content"
+     	     android:layout_height="wrap_content"
+     	     android:text="HistogramEQ"/>
      </LinearLayout>
 </LinearLayout>
